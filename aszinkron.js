@@ -40,3 +40,5 @@ export function putAdat(vegpont, id, adat){
     .catch((error)=>{console.log(error)})
     
 }
+
+//szorgalmi beépíteni a saját áruházunkba au aszinkront, másik pedig hogy szerkezthető legyen az adat része(nem saját és a kukánál van)

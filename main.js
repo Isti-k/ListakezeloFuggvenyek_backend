@@ -2,7 +2,7 @@
 import { sorTorles, szuresNevSzerint, tablazatRendez } from "./adatKezelo.js";
 import { megjelenites, tablazatOsszeallit } from "./fuggvenyek.js";
 import { adatokListaba } from "./urlapKezelo.js";
-import { getAdat } from "./aszinkron.js";
+import { deleteAdat, getAdat } from "./aszinkron.js";
 
 getAdat("http://localhost:3000/emberekLISTA",init)
 
@@ -70,9 +70,10 @@ function sorTorlesEsemeny() {
   const kukaELEM = $(".kuka");
   kukaELEM.on("click", function (event) {
     let index = event.target.id; /*  az aktuális kuka indexe */
-    const LISTA = sorTorles(emberekLISTA,index);
-    console.log(LISTA)
-    init(LISTA);
+    //const LISTA = sorTorles(emberekLISTA,index);
+    //console.log(LISTA)
+    //init(LISTA);
+    deleteAdat("http://localhost:3000/emberekLISTA",id)
   });
 }
 /*  szorgalmi: Mi a hiba a programban?  */
